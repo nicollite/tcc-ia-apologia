@@ -3,7 +3,8 @@
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
     "run-test": "yarn build && node dist/test.js",
-    "serve": "nodemon --watch 'src/**/*.ts'  --exec \"ts-node src/server.ts\""
+    "serve": "nodemon --watch 'src/**/*.ts'  --exec \"ts-node src/server.ts\"",
+    "deploy": "yarn build && firebase use default && firebase deploy --only functions"
   },
   "engines": {
     "node": "12"
