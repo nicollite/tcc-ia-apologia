@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Loader from "react-loader-spinner";
 import "./App.css";
 import { api } from "./services/api";
 
@@ -31,7 +32,11 @@ function App() {
     );
   });
 
-  const spinnedElement = <div className="loader">Consultando...</div>;
+  const spinnedElement = (
+    <div className="loader-div">
+      <Loader type="TailSpin" color="#00BFFF" height={100} width={100} />
+    </div>
+  );
 
   return (
     <div className="bg">
