@@ -14,5 +14,4 @@ const host = "localhost";
 // Set the listener for the app
 app.listen(port, host, () => {
   console.log(`Listening on ${host}:${port}`);
-  console.log(process.env);
 });
