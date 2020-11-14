@@ -41,7 +41,9 @@ function App() {
   return (
     <div className="bg">
       <div className="main">
-        <label htmlFor="text">Insira o texto para ser analisado abaixo:</label>
+        <label htmlFor="text">
+          Insira o texto abaixo para ser analisado de acordo com a doutrina da trindade:
+        </label>
         <textarea id="text" onChange={e => setText(e.target.value)} />
         <button className="btn" onClick={requestApi}>
           {"Enviar >"}
