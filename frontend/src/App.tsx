@@ -41,6 +41,7 @@ function App() {
   return (
     <div className="bg">
       <div className="main">
+        <h1>Απολογία (Apologia) - ia para análise doutrinária</h1>
         <label htmlFor="text">
           Insira o texto abaixo para ser analisado de acordo com a doutrina da trindade:
         </label>

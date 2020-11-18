@@ -24,6 +24,11 @@
   margin-bottom: 15px;
 }
 
+.main > h1 {
+  align-self: center;
+  font-size: 40px;
+}
+
 textarea {
   width: calc(100% - 20px);
   min-height: 100px;
