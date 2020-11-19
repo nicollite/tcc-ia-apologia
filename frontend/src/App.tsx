@@ -1,12 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, BaseSyntheticEvent } from "react";
 import Loader from "react-loader-spinner";
 import "./App.css";
 import { api } from "./services/api";
 
 function App() {
+  const maxTextLength = 60000;
+
   const [text, setText] = useState("");
   const [spinner, setSpinner] = useState(false);
   const [payload, setPayload] = useState([]);
+
+  function textHandler(e: BaseSyntheticEvent) {
+    const textArea = e.target as HTMLTextAreaElement;
+    const value = textArea.value.slice(0, maxTextLength);
+
+    if (textArea.value.length > maxTextLength) textArea.value = value;
+    setText(value);
+  }
 
   const requestApi = async () => {
     if (text.length === 0) return;
@@ -43,10 +53,21 @@ function App() {
       <div className="main">
         <h1>Απολογία (Apologia) - ia para análise doutrinária</h1>
         <label htmlFor="text">
-          Insira o texto abaixo para ser analisado de acordo com a doutrina da trindade:
+          <span>
+            Insira o texto abaixo para ser analisado de acordo com a doutrina da{" "}
+            <span className="bold">Trindade</span>*:
+          </span>
+          <span className="litle-text">
+            *textos não relacionados a doutrina ainda que bíblicos os resultados não serão precisos.
+          </span>
         </label>
-        <textarea id="text" onChange={e => setText(e.target.value)} />
-        <button className="btn" onClick={requestApi}>
+
+        <textarea id="text" onChange={textHandler} />
+        <span className="litle-text align-end">
+          {text.length}/{maxTextLength}
+        </span>
+
+        <button className="btn align-end" onClick={requestApi}>
           {"Enviar >"}
         </button>
         <div className="result">

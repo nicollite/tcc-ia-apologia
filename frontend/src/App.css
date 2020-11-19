@@ -29,6 +29,19 @@
   font-size: 40px;
 }
 
+.main > label {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.litle-text {
+  font-size: 10px;
+}
+
+.align-end {
+  align-self: flex-end;
+}
+
 textarea {
   width: calc(100% - 20px);
   min-height: 100px;
@@ -40,7 +53,6 @@ textarea {
 }
 
 .btn {
-  align-self: flex-end;
   position: relative;
   display: inline-block;
   box-sizing: border-box;
@@ -194,4 +206,8 @@ textarea {
 .loader-div {
   display: flex;
   justify-content: center;
+}
+
+.bold {
+  font-weight: bold;
 }
